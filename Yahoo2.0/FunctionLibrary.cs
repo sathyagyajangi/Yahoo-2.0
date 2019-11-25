@@ -52,14 +52,14 @@ namespace Yahoo2._0
             }
 
 
-            public static void waitForElement(IWebDriver driver, string Locatervalue)
+            public static bool waitForElement(IWebDriver driver, string Locatervalue,Boolean data)
 
             {
 
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
 
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(Locatervalue)));
-
+            return data;
 
             }
 
