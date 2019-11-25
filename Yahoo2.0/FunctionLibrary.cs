@@ -18,10 +18,7 @@ namespace Yahoo2._0
 
             public static void clickAction(IWebDriver driver, string LocaterValue, string LocaterType)
             {
-            if (LocaterType == "id")
-            {
-                driver.FindElement(By.Id(LocaterValue)).Click();
-            }
+          
                 if (LocaterType == "xpath")
                 {
                     driver.FindElement(By.XPath(LocaterValue)).Click();
