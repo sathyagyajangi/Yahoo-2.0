@@ -152,5 +152,15 @@ namespace Yahoo2._0
 
         }
 
+        public static  bool VisibleWidget(IWebDriver driver,string LocaterValue)
+        {
+            bool data = driver.FindElement(By.XPath(LocaterValue)).Displayed;
+
+
+                return data;
+        }
+
+
+
     }
 }

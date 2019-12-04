@@ -186,9 +186,23 @@ namespace Yahoo2._0
                 Console.WriteLine(str);
 
 
+               
+
+
+
+
+
+
+
 
             }
            
+
+
+
+
+
+
 
 
         }
@@ -209,12 +223,30 @@ namespace Yahoo2._0
             driver.Manage().Window.Maximize();
 
 
-
-            FunctionLibrary.CtrlClick(driver, "/html/body/div[1]/div/myapp/section[2]/div/div/div/div[3]/section[1]/div/div/div[2]/div/article[1]/div/div/a");
-
-            Thread.Sleep(5000);
+            for(int i=1;i<=3;i++)
+            {
 
 
+                FunctionLibrary.MouseOver(driver, "/html/body/div[1]/div/myapp/section[7]/div/div/div/div/section/section[1]/div/div/div[2]/section/div[1]/div[2]/article[" + i + "]/div/div[1]/a/div/img");
+
+                bool status = FunctionLibrary.VisibleWidget(driver, "/html/body/div[1]/div/myapp/section[7]/div/div/div/div/section/section[1]/div/div/div[2]/section/div[1]/div[2]/article[" + i + "]/div/div[1]/a/div/img");
+
+              //  Console.WriteLine(status);
+
+             string src=   driver.FindElement(By.XPath("/html/body/div[1]/div/myapp/section[7]/div/div/div/div/section/section[1]/div/div/div[2]/section/div[1]/div[2]/article[" + i + "]/div/div[1]/a/div/img")).GetAttribute("src");
+
+              //  Console.WriteLine(src);
+                if (src.EndsWith("default-lazy.png"))
+                {
+
+                    Console.WriteLine(src +"widget thumbail image is default");
+
+
+                }
+
+               
+             
+            }
            
 
 
